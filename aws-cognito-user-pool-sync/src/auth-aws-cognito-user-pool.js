@@ -145,15 +145,14 @@ function _signOut(usernameNU, passwordNU, callback) {
   })
 }
 
-const _handlers = {_addUser, _getCurrent, _signIn, _signOut}
-
-function dispatchAuthAction({action, username, password}, callback) {
-  try {
-    _handlers[`_${action}`](username, password, callback)
-  } catch (err) {
-    throw new Error(`AWSCognitoAuthImp: unknown action - ${err}`)
-  }
-}
 export default function makeAWSCognitoAuthImpl() {
-  return dispatchAuthAction
+  const handlers = {_addUser, _getCurrent, _signIn, _signOut}
+
+  return function dispatchAuthAction({action, username, password}, callback) {
+    try {
+      handlers[`_${action}`](username, password, callback)
+    } catch (err) {
+      throw new Error(`AWSCognitoAuthImp: unknown action - ${err}`)
+    }
+  }
 }

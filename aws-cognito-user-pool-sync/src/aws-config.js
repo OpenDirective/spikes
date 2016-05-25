@@ -10,8 +10,8 @@ const _AWSCONFIG = {
   ClientId: '7m5nr6pgpe7en26q55jnic16t6',
 
   SyncIdentityRegion: 'eu-west-1',
-  SyncIdentityPool: 'eu-west-1:23f3754f-d6d3-47da-af70-5eb83441d510'
-//  SyncIdentityPool: 'eu-west-1:bf784d6e-f55a-4725-84e2-b15e6d2e46d5'
+//  SyncIdentityPool: 'eu-west-1:23f3754f-d6d3-47da-af70-5eb83441d510'
+  SyncIdentityPool: 'eu-west-1:bf784d6e-f55a-4725-84e2-b15e6d2e46d5'
 }
 
 // Slightly messy way to get round lack of self reference in obj literals
