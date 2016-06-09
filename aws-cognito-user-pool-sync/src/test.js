@@ -44,10 +44,10 @@ test('Test data get before set', (assert) => {
 
 test('Test set and get', (assert) => {
   const payload = JSON.stringify({foo: 1, bar: ['a', {b: 'b'} ]})
+  const key = 'config';
+  dispatchSyncAction({action: 'set', key, value: payload})
 
-  dispatchSyncAction({action: 'set', key: 'config', value: payload})
-
-  dispatchSyncAction({action: 'get', key: 'config'}, (value) => {
+  dispatchSyncAction({action: 'get', key}, (value) => {
     const expected = payload
     const actual = value
 
