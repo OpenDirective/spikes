@@ -10,7 +10,6 @@ module.exports = {
   },
 
   plugins: {
-    babel: {presets: ['es2015'],
-            plugins: ['transform-object-rest-spread']}
+    babel: {presets: ['es2015']}
   }
 };
