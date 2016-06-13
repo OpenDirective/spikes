@@ -1,16 +1,15 @@
-// import ping from 'kinvey'
-
 import test from 'tape'
 
 // setup for all tests]
-import config from './kinvey-config'
+import {config} from './kinvey-config'
 
 function runTests () {
   console.debug(config)
   console.debug(Kinvey)
 
   test('init', (assert) => {
-    const client = Kinvey.init(config);
+    const client = Kinvey.init({appkey: config.appKey,
+                                appsecret: config.appSecret})
 
     assert.equal(client instanceof Kinvey.client, true,
       'init should return a Client object')
