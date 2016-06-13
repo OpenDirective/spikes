@@ -5,7 +5,7 @@
   "main": "lib/script-compiled.js",
    "scripts": {
     "pretest": "npm run build",
-    "test": "bash -c \"echo Browse to http://localhost:8080/ to run tests; cat index.html | browser-run --input html --static . -p 8080 | faucet\"",
+    "test": "bash -c \"echo Browse to http://localhost:3333/ to run tests; cat index.html | browser-run --input html --static . -p 3333 | faucet\"",
     "build": "browserify -t babelify --debug src/test.js -o lib/script-compiled.js",
     "serve": "bash -c static -a 0.0.0.0 -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}' "
   },
