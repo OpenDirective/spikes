@@ -5,7 +5,8 @@
   "main": "lib/script-compiled.js",
   "scripts": {
     "pretest": "npm run build",
-    "test_b": "bash -c \"echo Browse to http://localhost:3333/ to run tests; cat index.html | browser-run --input html --static . -p 3333 | faucet\"",
+    "pretest_b": "npm run build",
+    "test_b": "bash -c \"echo Browse to http://localhost:3333/ to run tests; cat index.html | browser-run --input html --static . -p 3333 \"",
     "test": "bash -c \"echo Running tests in electron; cat index.html | browser-run --input html --static .\"",
     "build": "browserify -t babelify --debug src/test.js -o lib/script-compiled.js",
     "serve": "bash -c static -a 0.0.0.0 -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}' "
